@@ -21,7 +21,7 @@ function Lightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center"
+      className="fixed inset-0 z-[100] bg-purple/95 backdrop-blur-sm flex items-center justify-center"
       onClick={onClose}
     >
       {/* Close button */}
@@ -46,7 +46,7 @@ function Lightbox({
         <img
           src={photo.src}
           alt={photo.alt}
-          className="max-w-full max-h-[85vh] object-contain"
+          className="max-w-full max-h-[85vh] object-contain rounded-lg"
         />
       </div>
 
@@ -58,7 +58,7 @@ function Lightbox({
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-4xl px-2"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-5xl px-2"
           >
             &lsaquo;
           </button>
@@ -67,7 +67,7 @@ function Lightbox({
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-4xl px-2"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-5xl px-2"
           >
             &rsaquo;
           </button>
@@ -102,10 +102,10 @@ function ProjectSection({ project }: { project: Project }) {
     <section id={project.slug} className="scroll-mt-24">
       {/* Project header */}
       <div className="mb-8 md:mb-10">
-        <p className="text-xs tracking-[0.25em] uppercase text-muted mb-3">
+        <p className="text-xs tracking-[0.25em] uppercase text-accent mb-3">
           {project.category} &mdash; {project.year}
         </p>
-        <h2 className="font-[family-name:var(--font-playfair)] text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[0.9]">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-6xl md:text-8xl lg:text-9xl font-semibold italic tracking-tight leading-[0.9] text-foreground">
           {project.title}
         </h2>
         <p className="mt-4 text-muted max-w-xl text-base md:text-lg leading-relaxed">
@@ -114,7 +114,7 @@ function ProjectSection({ project }: { project: Project }) {
       </div>
 
       {/* Photo grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
         {allPhotos.map((photo, i) => (
           <button
             key={i}
@@ -124,7 +124,7 @@ function ProjectSection({ project }: { project: Project }) {
             }`}
           >
             <div
-              className={`relative overflow-hidden ${
+              className={`relative overflow-hidden rounded-lg ${
                 i === 0 ? "aspect-[3/4] md:aspect-[4/5]" : "aspect-[3/4]"
               }`}
             >
@@ -162,10 +162,13 @@ export default function WorkPage() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="pt-28 md:pt-32 px-6 md:px-10 pb-24">
+    <div className="pt-28 md:pt-32 px-6 md:px-10 pb-24 max-w-7xl mx-auto">
       {/* Page header */}
       <div className="mb-16 md:mb-20">
-        <h1 className="font-[family-name:var(--font-playfair)] text-[13vw] md:text-[10vw] lg:text-[8vw] font-bold tracking-tight leading-[0.85]">
+        <p className="text-sm tracking-[0.25em] uppercase text-accent mb-3">
+          Portfolio
+        </p>
+        <h1 className="font-[family-name:var(--font-cormorant)] text-[13vw] md:text-[10vw] lg:text-[8vw] font-semibold italic tracking-tight leading-[0.85] text-foreground">
           Work
         </h1>
       </div>
@@ -176,9 +179,9 @@ export default function WorkPage() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`text-sm tracking-[0.2em] uppercase whitespace-nowrap transition-all pb-1 border-b ${
+            className={`text-sm tracking-[0.2em] uppercase whitespace-nowrap transition-all pb-1 border-b-2 ${
               activeCategory === cat
-                ? "text-foreground border-foreground"
+                ? "text-accent border-accent"
                 : "text-muted border-transparent hover:text-foreground"
             }`}
           >

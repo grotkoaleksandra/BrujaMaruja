@@ -16,12 +16,12 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-      <div className="flex items-center justify-between px-6 py-5 md:px-10 md:py-6">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <div className="flex items-center justify-between px-6 py-4 md:px-10 md:py-5">
         {/* Logo */}
         <Link
           href="/"
-          className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold tracking-wider text-white"
+          className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-semibold italic text-accent"
         >
           BrujaMaruja
         </Link>
@@ -32,9 +32,11 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-[0.2em] uppercase transition-opacity hover:opacity-100 ${
-                pathname === link.href ? "opacity-100" : "opacity-60"
-              } text-white`}
+              className={`text-sm tracking-[0.15em] uppercase transition-colors ${
+                pathname === link.href
+                  ? "text-accent font-medium"
+                  : "text-muted hover:text-foreground"
+              }`}
             >
               {link.label}
             </Link>
@@ -48,18 +50,18 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-px bg-white transition-transform duration-300 ${
-              menuOpen ? "rotate-45 translate-y-[3.5px]" : ""
+            className={`block w-6 h-0.5 bg-foreground transition-transform duration-300 ${
+              menuOpen ? "rotate-45 translate-y-[4px]" : ""
             }`}
           />
           <span
-            className={`block w-6 h-px bg-white transition-opacity duration-300 ${
+            className={`block w-6 h-0.5 bg-foreground transition-opacity duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block w-6 h-px bg-white transition-transform duration-300 ${
-              menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
+            className={`block w-6 h-0.5 bg-foreground transition-transform duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-[4px]" : ""
             }`}
           />
         </button>
@@ -67,21 +69,21 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black/95 flex flex-col items-center justify-center gap-8 mix-blend-normal">
+        <div className="md:hidden fixed inset-0 bg-purple/95 flex flex-col items-center justify-center gap-8">
           <button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-5 right-6 p-2"
+            className="absolute top-4 right-6 p-2"
             aria-label="Close menu"
           >
-            <span className="block w-6 h-px bg-white rotate-45 translate-y-px" />
-            <span className="block w-6 h-px bg-white -rotate-45" />
+            <span className="block w-6 h-0.5 bg-white rotate-45 translate-y-px" />
+            <span className="block w-6 h-0.5 bg-white -rotate-45" />
           </button>
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-[family-name:var(--font-playfair)] text-4xl font-light text-white tracking-wider"
+              className="font-[family-name:var(--font-cormorant)] text-5xl font-light italic text-white tracking-wider"
             >
               {link.label}
             </Link>

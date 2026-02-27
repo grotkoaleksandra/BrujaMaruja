@@ -15,6 +15,9 @@ export interface Project {
   photos: Photo[];
 }
 
+// Using picsum.photos placeholders — replace with real photos later
+// Each seed produces a unique, consistent image
+
 export const projects: Project[] = [
   {
     slug: "violet-reverie",
@@ -24,41 +27,41 @@ export const projects: Project[] = [
     description:
       "A study in texture and color — brown wool against purple stockings, torn paper edges framing moments of quiet contemplation.",
     cover: {
-      src: "/images/violet-reverie/cover.jpg",
+      src: "https://picsum.photos/seed/vr-cover/800/1100",
       alt: "Model in brown blazer and purple tights, seated on white cube",
-      width: 1200,
-      height: 1600,
+      width: 800,
+      height: 1100,
     },
     photos: [
       {
-        src: "/images/violet-reverie/01.jpg",
+        src: "https://picsum.photos/seed/vr-01/800/1000",
         alt: "Four-panel collage with torn paper edges",
-        width: 1200,
-        height: 1500,
+        width: 800,
+        height: 1000,
       },
       {
-        src: "/images/violet-reverie/02.jpg",
+        src: "https://picsum.photos/seed/vr-02/800/1100",
         alt: "Overhead shot, model reading book cross-legged",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/violet-reverie/03.jpg",
-        alt: "Portrait, hand on neck, looking up",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/violet-reverie/04.jpg",
-        alt: "Reclining pose with crossed legs",
-        width: 1600,
+        width: 800,
         height: 1100,
       },
       {
-        src: "/images/violet-reverie/05.jpg",
+        src: "https://picsum.photos/seed/vr-03/800/1100",
+        alt: "Portrait, hand on neck, looking up",
+        width: 800,
+        height: 1100,
+      },
+      {
+        src: "https://picsum.photos/seed/vr-04/1100/800",
+        alt: "Reclining pose with crossed legs",
+        width: 1100,
+        height: 800,
+      },
+      {
+        src: "https://picsum.photos/seed/vr-05/800/1100",
         alt: "Seated on cube, legs crossed, looking away",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
     ],
   },
@@ -70,29 +73,29 @@ export const projects: Project[] = [
     description:
       "Dramatic studio lighting sculpts the human form against deep teal — identity hidden, vulnerability exposed.",
     cover: {
-      src: "/images/blue-mask/cover.jpg",
+      src: "https://picsum.photos/seed/bm-cover/800/1100",
       alt: "Figure in balaclava, dramatic blue lighting from behind",
-      width: 1200,
-      height: 1600,
+      width: 800,
+      height: 1100,
     },
     photos: [
       {
-        src: "/images/blue-mask/01.jpg",
+        src: "https://picsum.photos/seed/bm-01/800/1100",
         alt: "Back muscles illuminated, balaclava portrait",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
       {
-        src: "/images/blue-mask/02.jpg",
+        src: "https://picsum.photos/seed/bm-02/800/1200",
         alt: "Full seated figure, silhouette against blue",
-        width: 1200,
-        height: 1800,
+        width: 800,
+        height: 1200,
       },
       {
-        src: "/images/blue-mask/03.jpg",
+        src: "https://picsum.photos/seed/bm-03/800/1100",
         alt: "Close-up, eyes through balaclava",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
     ],
   },
@@ -104,29 +107,29 @@ export const projects: Project[] = [
     description:
       "Warm orange glow meets sharp silhouettes. High fashion in high contrast — the body as architecture.",
     cover: {
-      src: "/images/ember/cover.jpg",
+      src: "https://picsum.photos/seed/em-cover/800/1100",
       alt: "Model crouching against orange backdrop, looking over shoulder",
-      width: 1200,
-      height: 1600,
+      width: 800,
+      height: 1100,
     },
     photos: [
       {
-        src: "/images/ember/01.jpg",
+        src: "https://picsum.photos/seed/em-01/800/1100",
         alt: "Crouching from behind, orange glow",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
       {
-        src: "/images/ember/02.jpg",
+        src: "https://picsum.photos/seed/em-02/1100/800",
         alt: "Profile portrait, eyes closed, orange backdrop",
-        width: 1600,
-        height: 1100,
+        width: 1100,
+        height: 800,
       },
       {
-        src: "/images/ember/03.jpg",
+        src: "https://picsum.photos/seed/em-03/1100/800",
         alt: "Futuristic visor, braid held up, spotlight",
-        width: 1600,
-        height: 1100,
+        width: 1100,
+        height: 800,
       },
     ],
   },
@@ -138,23 +141,23 @@ export const projects: Project[] = [
     description:
       "Leather and combat boots against European storefronts. Film grain and city grit — beauty in rebellion.",
     cover: {
-      src: "/images/urban-rebel/cover.jpg",
+      src: "https://picsum.photos/seed/ur-cover/1100/800",
       alt: "Model in leather jacket crouching by toy store window",
-      width: 1600,
-      height: 1100,
+      width: 1100,
+      height: 800,
     },
     photos: [
       {
-        src: "/images/urban-rebel/01.jpg",
+        src: "https://picsum.photos/seed/ur-01/800/1100",
         alt: "Standing in street, leather jacket and boots",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
       {
-        src: "/images/urban-rebel/02.jpg",
+        src: "https://picsum.photos/seed/ur-02/800/1100",
         alt: "Close-up by toy store, looking away",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
     ],
   },
@@ -166,23 +169,23 @@ export const projects: Project[] = [
     description:
       "Children play in fountains as golden light filters through water mist — silhouettes frozen in joy.",
     cover: {
-      src: "/images/golden-mist/cover.jpg",
+      src: "https://picsum.photos/seed/gm-cover/800/1200",
       alt: "Girl spinning with arms outstretched in fountain mist, backlit",
-      width: 1200,
-      height: 1800,
+      width: 800,
+      height: 1200,
     },
     photos: [
       {
-        src: "/images/golden-mist/01.jpg",
+        src: "https://picsum.photos/seed/gm-01/800/1100",
         alt: "Child running through spray, rickshaw silhouette",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
       {
-        src: "/images/golden-mist/02.jpg",
+        src: "https://picsum.photos/seed/gm-02/1100/800",
         alt: "Two figures playing, golden backlighting",
-        width: 1600,
-        height: 1100,
+        width: 1100,
+        height: 800,
       },
     ],
   },
@@ -194,35 +197,35 @@ export const projects: Project[] = [
     description:
       "Satin trench coats and knit dresses — softness as strength. Minimal studio, maximum presence.",
     cover: {
-      src: "/images/soft-armour/cover.jpg",
+      src: "https://picsum.photos/seed/sa-cover/800/1100",
       alt: "Model in beige trench coat, portrait",
-      width: 1200,
-      height: 1600,
+      width: 800,
+      height: 1100,
     },
     photos: [
       {
-        src: "/images/soft-armour/01.jpg",
+        src: "https://picsum.photos/seed/sa-01/800/1200",
         alt: "Full length in dark knit dress, barefoot",
-        width: 1200,
-        height: 1800,
+        width: 800,
+        height: 1200,
       },
       {
-        src: "/images/soft-armour/02.jpg",
+        src: "https://picsum.photos/seed/sa-02/1100/800",
         alt: "Reclining in satin trench, looking at camera",
-        width: 1600,
+        width: 1100,
+        height: 800,
+      },
+      {
+        src: "https://picsum.photos/seed/sa-03/800/1100",
+        alt: "Standing in trench coat, confident pose",
+        width: 800,
         height: 1100,
       },
       {
-        src: "/images/soft-armour/03.jpg",
-        alt: "Standing in trench coat, confident pose",
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: "/images/soft-armour/04.jpg",
+        src: "https://picsum.photos/seed/sa-04/800/1100",
         alt: "Close-up portrait, ribbed black dress",
-        width: 1200,
-        height: 1600,
+        width: 800,
+        height: 1100,
       },
     ],
   },

@@ -1,21 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0a0a0a;
-  --fg: #fafafa;
-  --accent: #e63946;
-  --muted: #737373;
-  --border: #262626;
+  --bg: #faf7f2;
+  --fg: #1a1a2e;
+  --accent: #d4622b;
+  --accent-light: #e8854a;
+  --purple: #3a2d7c;
+  --purple-light: #5b4cb5;
+  --muted: #8c8595;
+  --border: #e0d8cf;
+  --cream: #f5efe6;
+  --warm-white: #fffcf7;
 }
 
 @theme inline {
   --color-background: var(--bg);
   --color-foreground: var(--fg);
   --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-purple: var(--purple);
+  --color-purple-light: var(--purple-light);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-cream: var(--cream);
+  --color-warm-white: var(--warm-white);
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-playfair);
+  --font-script: var(--font-cormorant);
 }
 
 body {
@@ -33,7 +44,7 @@ html {
 /* Selection color */
 ::selection {
   background: var(--accent);
-  color: var(--fg);
+  color: white;
 }
 
 /* Fade-in animation */
@@ -80,6 +91,7 @@ html {
 /* Image hover zoom */
 .img-hover {
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .img-hover img {
@@ -97,4 +109,12 @@ html {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

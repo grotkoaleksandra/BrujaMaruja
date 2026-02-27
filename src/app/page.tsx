@@ -7,25 +7,34 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-screen flex items-end overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/ember/cover.jpg')",
+            backgroundImage:
+              "url('https://picsum.photos/seed/hero-brujamaruja/1600/1000')",
           }}
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        {/* Warm overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple/90 via-purple/70 to-purple/40" />
 
         {/* Hero text */}
-        <div className="relative z-10 px-6 pb-20 md:px-10 md:pb-24 w-full">
-          <h1 className="font-[family-name:var(--font-playfair)] text-[15vw] md:text-[12vw] lg:text-[10vw] font-bold leading-[0.85] tracking-tight animate-fade-up">
+        <div className="relative z-10 px-6 md:px-10 w-full max-w-5xl mx-auto text-center">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-[14vw] md:text-[10vw] lg:text-[8vw] font-semibold italic leading-[0.9] tracking-tight text-white animate-fade-up">
             BrujaMaruja
           </h1>
-          <p className="mt-4 text-lg md:text-xl tracking-[0.3em] uppercase text-white/70 animate-fade-up-delay-1">
+          <p className="mt-6 text-lg md:text-xl tracking-[0.3em] uppercase text-white/70 animate-fade-up-delay-1">
             Photography
           </p>
+          <div className="mt-10 animate-fade-up-delay-2">
+            <Link
+              href="/work"
+              className="inline-block px-8 py-3 bg-accent text-white text-sm tracking-[0.2em] uppercase rounded-full hover:bg-accent-light transition-colors"
+            >
+              Explore Work
+            </Link>
+          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -35,23 +44,26 @@ export default function Home() {
       </section>
 
       {/* Featured Work */}
-      <section className="px-6 py-24 md:px-10 md:py-32">
+      <section className="px-6 py-24 md:px-10 md:py-32 max-w-7xl mx-auto">
         <div className="flex items-baseline justify-between mb-12 md:mb-16">
-          <h2 className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-            Selected
-            <br />
-            Work
-          </h2>
+          <div>
+            <p className="text-sm tracking-[0.25em] uppercase text-accent mb-3">
+              Portfolio
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl lg:text-8xl font-semibold italic tracking-tight text-foreground">
+              Selected Work
+            </h2>
+          </div>
           <Link
             href="/work"
-            className="hidden md:block text-sm tracking-[0.2em] uppercase text-muted hover:text-foreground transition-colors"
+            className="hidden md:block text-sm tracking-[0.2em] uppercase text-accent hover:text-accent-light transition-colors"
           >
             View All &rarr;
           </Link>
         </div>
 
-        {/* Asymmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {featured.map((project, i) => (
             <Link
               key={project.slug}
@@ -61,12 +73,8 @@ export default function Home() {
               }`}
             >
               <div
-                className={`relative overflow-hidden ${
-                  i === 0
-                    ? "aspect-[3/4]"
-                    : i === 1
-                    ? "aspect-[4/3]"
-                    : "aspect-[4/3]"
+                className={`relative overflow-hidden rounded-lg ${
+                  i === 0 ? "aspect-[3/4]" : "aspect-[4/3]"
                 }`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -76,13 +84,13 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
+                <div className="absolute inset-0 bg-purple/0 group-hover:bg-purple/60 transition-all duration-500 rounded-lg" />
                 {/* Title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <p className="text-xs tracking-[0.2em] uppercase text-white/70">
                     {project.category} &mdash; {project.year}
                   </p>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-white mt-1">
+                  <h3 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-semibold italic text-white mt-1">
                     {project.title}
                   </h3>
                 </div>
@@ -94,20 +102,20 @@ export default function Home() {
         {/* Mobile view all link */}
         <Link
           href="/work"
-          className="md:hidden block mt-8 text-sm tracking-[0.2em] uppercase text-muted hover:text-foreground transition-colors text-center"
+          className="md:hidden block mt-8 text-sm tracking-[0.2em] uppercase text-accent hover:text-accent-light transition-colors text-center"
         >
           View All Work &rarr;
         </Link>
       </section>
 
-      {/* Statement */}
-      <section className="px-6 py-24 md:px-10 md:py-32 border-t border-border">
+      {/* Statement — purple band */}
+      <section className="bg-purple px-6 py-24 md:px-10 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl lg:text-6xl font-light leading-tight italic">
+          <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-6xl lg:text-7xl font-light italic leading-tight text-white">
             &ldquo;I photograph the space between who we are and who we
             pretend to be.&rdquo;
           </p>
-          <p className="mt-8 text-sm tracking-[0.2em] uppercase text-muted">
+          <p className="mt-8 text-sm tracking-[0.2em] uppercase text-white/50">
             &mdash; BrujaMaruja
           </p>
         </div>
